@@ -1,10 +1,14 @@
 
 package Game;
-
 import Game.rendering.ui.SplashScreenDriver;
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
+/*
+ * @ author: Van Trung Vo
+ * @ Version: 1.0
+ * */
 
 public class Main {
 
