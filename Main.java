@@ -1,36 +1,32 @@
-package findsamelengthwords;
-import java.util.*;
-/**
- * @author VT Vo
- * @version 15.05.2021
- * Using ArrayList
+package passwordfromtext;
+
+/*
+ * @author Van Trung Vo
+ * @version 06.05.2021
  * */
 public class Main {
     public static void main(String[] args){
-        Scanner scan = new Scanner(System.in);
-        String input = "";
-        TheSameLength find = new TheSameLength(input);
+        CreatPassWord text = new CreatPassWord();
+        boolean repeat = true;
+        while(repeat){
+            System.out.println("Enter your text");
+            System.out.print("> ");
+            String input = TextInput.readLine();
+            text.setText(input);
 
-        while(true){
-            System.out.println("Enter your String:");
-            if(scan.hasNext()){
-                input = scan.nextLine();
-            }
-            find.setText(input);
-            find.find();
-            System.out.println("The Result: \n");
-            System.out.println(find);
-            System.out.println("Do you want to try with other Text? (y/n)");
+            //Call function Makepassword in Class CreatPassWord
+            String pass = text.makepassword(input);
+            System.out.println("Your created password: " + pass.toString());
 
-            if(scan.hasNext()){
-                input = scan.nextLine();
-
-                if(input.equals("n")){
-                    break;
-                }else if(!input.equals("y")){
-                    System.err.println("Please enter only 'y' or 'n'");
-                    System.exit(-1);
-                }
+            //Try with new Text
+            System.out.println("Do you want try again? (y/n)");
+            System.out.print("> ");
+            String answer = TextInput.readLine();
+            //repeat = answer.equals("y"); //when "y" input, continue new text to input
+            if(!answer.equals("y")){
+                repeat = false;
+            }else{
+                repeat = true;
             }
         }
     }
