@@ -1,18 +1,18 @@
-package passwordfromtext;
+package sortwordsinsentence;
 
 import java.util.*;
 
 public class TextInput {
-
-    private static Scanner sc;
+    private static Scanner scan;
     public static String readLine(){
-        if(TextInput.sc == null){
-            //new scanner creat
-            TextInput.sc = new Scanner(System.in);
+        String input;
+        if(TextInput.scan == null){
+            TextInput.scan = new Scanner(System.in);//creat new scanner
         }
-        //when there is a text
-        if(TextInput.sc.hasNextLine()){
-            return TextInput.sc.nextLine(); //return the text
+        //when you input the text
+        if(scan.hasNextLine()){
+            input = scan.nextLine();
+            return input; //return the input text
         }else{
             return null;
         }
