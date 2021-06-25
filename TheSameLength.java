@@ -29,27 +29,10 @@ public class TheSameLength {
         for(String w : words){
             lengthList.add(w.length());
         }
-
-        //remove the same elements in LengthList
-        for(int i = 0; i < lengthList.size(); i++){
-            for(int j = i; j < lengthList.size(); j++){
-                if(lengthList.get(i).equals(lengthList.get(j))){
-                    lengthList.remove(j);
-                }
-            }
-        }
-
-        //Sort lengthList ascend
-        for(int i = 0; i < lengthList.size(); i++){
-            for(int j = i + 1; j < lengthList.size(); j++){
-                if(lengthList.get(i) > lengthList.get(j)){
-                    //exchange element position i for element position j
-                    int temp = lengthList.get(i);
-                    lengthList.set(i, lengthList.get(j));
-                    lengthList.set(j, temp);
-                }
-            }
-        }
+        
+        //remove duplicate and sort the List
+        HashSet<Integer> new_list = new HashSet<Integer>(lengthList);
+        
         String print_result = "";
         // find all words with same length and then add to print_result
         for(Integer l : lengthList){
@@ -71,20 +54,6 @@ public class TheSameLength {
             result += l + ": " + temp_result + "\n";
             print_result = ""; //set print_list as empty list
         }
-        /*
-        co the rut gon lai nhu sau, chi dung vs 1 dong co chua tu cuoi cung
-        for(Integer l : lengthList){
-             for(int i = 0; i< words.length; i++){
-                 if((l.equals(words[i].length())) && i != words.length -1){
-                     print_result += words[i] + " ";
-                 }else if((l.equals(words[i].length())) && i == words.length -1){
-                     print_result += words[i];
-                 }
-             }
-             result += l + ": " + print_result + "\n";
-             print_result = "";
-         }
-        */
     }
     @Override
     public String toString(){
