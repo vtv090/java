@@ -1,5 +1,3 @@
-package sortwordsinsentence;
-
 import java.util.*;
 
 public class TextInput {
