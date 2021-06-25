@@ -1,2 +1,2 @@
 # Java
-Using Merge Sort
+Using Merge Sort with Generics
