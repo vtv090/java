@@ -1,5 +1,3 @@
-package sortwordsinsentence;
-
 public class PermuteWords {
     private String text;
     private String result;
